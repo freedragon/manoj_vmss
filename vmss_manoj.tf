@@ -101,7 +101,11 @@ resource "azurerm_virtual_machine_scale_set" "terraformvmss" {
   }
   
   os_profile_linux_config {
-    disable_password_authentication = false
+    disable_password_authentication = true
+            ssh_keys {
+            path     = "/home/myadmin/.ssh/authorized_keys"
+            key_data = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCczY+8XfyQ3vc6kvCUMM10pTWKAUhsvKV82OUK8qjWMnG5De7zUGJ+KeLY75+zxQAZt7gkwUBudDNTK6HmEyUQ9W/q5KmvEqfa641CwFuksj2umXCkIyFcm0mAhAIxcKah8SwVfSl2zJlp/dqoSCBpzGFXEIYp4OtBiQTAjupAeLPYwKtXdUXzjmMzfhSpY4H4EYJzgzt/eS2thYMgOtvv5kr3/Xbee70STNVyoliSUHhW5EpDOmgD7/TRGAy+OqRUoqtyRMDByfRKHT62r+OcmZUpUiylnVllhmQyLYuLCXDZIqRTVfQv0G2QoCIV7CsJ0XG7bmalbp+D/bdgugsN"
+        }
   }
 
   network_profile {
@@ -140,7 +144,7 @@ resource "azurerm_virtual_machine_scale_set" "terraformvmss" {
 
     settings = <<SETTINGS
     {
-        "fileUris": ["https://raw.githubusercontent.com/manojsingh/azvmscripts/master/setup.sh"],
+        "fileUris": ["https://raw.githubusercontent.com/bedro96/manoj_vmss/master/setup.sh"],
         "commandToExecute": "/bin/bash ./setup.sh"
     }
     SETTINGS

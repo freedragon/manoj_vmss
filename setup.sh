@@ -17,7 +17,8 @@ git clone https://github.com/manojsingh/azvmscripts.git
 
 #Start health probe job
 cd azvmscripts
-nohup python3 ./health_probe_handler.py & echo $! > health-probe-pid.file &
+chmod +x *.py
+nohup ./health_probe_handler.py & echo $! > health-probe-pid.file &
 
 # Schedule cron jobs
 crontab crons.sh

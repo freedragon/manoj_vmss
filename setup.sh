@@ -8,6 +8,7 @@ cd scripts
 #install python  Dependencies
 apt update
 apt -y dist-upgrade
+apt update
 apt -y install python3-pip
 pip3 install psutil bottle configparser
 

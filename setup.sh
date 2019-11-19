@@ -16,7 +16,7 @@ pip3 install psutil bottle configparser
 ln -s /usr/bin/python3 /usr/bin/python -f
 
 #checkout code
-git clone https://github.com/freedragon/azvmscripts
+git clone https://github.com/freedragon/azvmscripts.git
 
 #Start health probe job
 cd azvmscripts
